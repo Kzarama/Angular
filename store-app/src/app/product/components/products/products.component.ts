@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from '../product.model';
+import { Product } from '../../../core/service/models/product.model';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   products: Product[] = [
     {
@@ -56,11 +55,9 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
+  ngOnInit(): void {}
+
   clickProduct(id: number) {
     console.log('product' + id);
   }
-
-  ngOnInit(): void {
-  }
-
 }

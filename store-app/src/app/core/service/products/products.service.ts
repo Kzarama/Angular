@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { Product } from 'src/app/product.model';
+import { Product } from 'src/app/core/service/models/product.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
-
   products: Product[] = [
     {
       id: '1',
@@ -52,14 +51,13 @@ export class ProductsService {
     },
   ];
 
-  constructor() { }
+  constructor() {}
 
   getAllProducts() {
     return this.products;
   }
 
   getProduct(id: string) {
-    return this.products.find(item => id === item.id)
+    return this.products.find((item) => id === item.id);
   }
-
 }
