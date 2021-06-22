@@ -3,6 +3,8 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { LayoutComponent } from './layout/layout.component';
 
+import { AdminGuard } from './shared/guardians/admin.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -20,21 +22,23 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent,
-      },
-      {
-        path: 'products/:id',
-        component: ProductDetailComponent,
+        loadChildren: () =>
+          import('./product/product.module').then((m) => m.ProductModule),
       },
       {
         path: 'contact',
-        component: ContactComponent,
+        canActivate: [AdminGuard],
+        loadChildren: () =>
+          import('./contact/contact.module').then((m) => m.ContactModule),
       },
     ],
   },
   {
     path: '**',
-    component: PageNotFoundComponent,
+    loadChildren: () =>
+      import('./page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
   },
 ];
 
