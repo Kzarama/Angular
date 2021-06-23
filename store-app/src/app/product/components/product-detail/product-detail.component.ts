@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Product } from '../../../core/service/models/product.model';
+import { Product } from '../../../core/models/product.model';
 import { ProductsService } from '../../../core/service/products/products.service';
 
 @Component({
@@ -25,19 +25,4 @@ export class ProductDetailComponent implements OnInit {
       });
     });
   }
-
-  // createProduct() {
-  //   const newProduct: Product = {};
-  //   this.productsService.createProduct(newProduct);
-  // }
-
-  // updateProduct() {
-  //   const newProduct: Product = {};
-  //   const id: string = '';
-  //   this.productsService.updateProduct(id, newProduct);
-  // }
-
-  // deleteProduct() {
-  //   this.productsService.deleteProduct(id);
-  // }
 }

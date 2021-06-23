@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  constructor() {}
+  emailField: FormControl;
+
+  constructor() {
+    this.emailField = new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]);
+  }
+
+  sendMail() {
+    if (this.emailField.valid) {
+    }
+  }
 }

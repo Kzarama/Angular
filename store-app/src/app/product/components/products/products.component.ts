@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Product } from '../../../core/service/models/product.model';
+import { Product } from '../../../core/models/product.model';
 
 import { ProductsService } from 'src/app/core/service/products/products.service';
 
@@ -20,7 +20,5 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  clickProduct(id: number): void {
-    console.log('product' + id);
-  }
+  clickProduct(id: number): void {}
 }
