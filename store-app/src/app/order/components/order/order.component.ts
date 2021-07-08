@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
 
-import { Product } from 'src/app/core/models/product.model';
-import { CartService } from 'src/app/core/service/cart.service';
+import { Product } from '@core/models/product.model';
+import { CartService } from '@core/service/cart.service';
 
 @Component({
   selector: 'app-order',

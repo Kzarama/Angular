@@ -1,12 +1,13 @@
-<div *ngIf="product">
+<div *ngIf="product$ | async as product">
   <div>
     <img [src]="product.image" alt="" />
   </div>
   <div>
     <ul>
-      <li>Nombre: {{ product.title }}</li>
-      <li>Precio: {{ product.price | currency }}</li>
+      <li>Name: {{ product.title }}</li>
+      <li>Price: {{ product.price | currency }}</li>
     </ul>
     <p>{{ product.description }}</p>
+    <button (click)="deleteProduct(product.id)">Delete product</button>
   </div>
 </div>
